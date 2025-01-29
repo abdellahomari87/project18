@@ -1,8 +1,8 @@
 pipeline {
   agent {
     docker {
-      image 'maven:3.8.4-openjdk-17'
-      args '--entrypoint="" -u root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
+      image 'docker:25.0-dind'
+      args '--privileged -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
   stages {
