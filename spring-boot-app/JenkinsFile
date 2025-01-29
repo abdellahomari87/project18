@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "http://localhost:9000"
+        SONAR_URL = "http://a8d245ef6c51641aab0059ba778e6079-1041065365.us-east-1.elb.amazonaws.com:9000"
       }
       steps {
         withCredentials([string(credentialsId: 'c9c66346-6636-441a-ab5f-4d4734fe38e1', variable: 'SONAR_AUTH_TOKEN')]) {
