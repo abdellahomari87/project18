@@ -6,6 +6,11 @@ pipeline {
         sh 'echo passed'
       }
     }
+   stage('Verify Repository') {
+    steps {
+        sh 'ls -R'
+      }
+    }
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
